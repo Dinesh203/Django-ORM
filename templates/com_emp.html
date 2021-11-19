@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Detail</title>
+</head>
+<body>
+<h1>Companyies all Employee Data</h1>
+ {% if com_emp %}
+    {% for emp in com_emp %}
+        <li> ID : {{emp.id}}</li>
+        <li> Name : {{emp.name}}</li>
+        <li> Email : {{emp.email}}</li>
+        <li> Salary : {{emp.salary}}</li> <br><hr>
+    {% endfor %}
+
+ {% endif %}
+</body>
+</html>

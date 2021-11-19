@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+  <title>ORM Show</title>
+</head>
+<body>
+{{ compdata }} <br><br>
+{{ empdata }}
+<h1>Show Company Data</h1>
+<a href="{% url 'homepage' %}">Home page</a><br><br>
+{#<a href="{% url 'Showdata' id  %}">Show Company Data</a>#}
+{% for data in compdata %}
+    <li> ID : {{data.id}}</li>
+    <li> Name : {{data.name}}</li>
+    <li> Description : {{data.description}}</li>
+    <li> Address : {{data.address}}</li>
+    <br>
+{#    <a href="/show/{{data.id}}">{{ data.name }}</a><hr> <br>#}
+    <a href="/showdata/{{data.id}}">{{ data.name }}</a><hr>
+
+{% endfor %}<br>
+
+<h2>Employee Data</h2>
+
+{% for emdata in empdata %}
+    <li> ID : {{emdata.id}}</li>
+    <li> Name : {{emdata.name}}</li>
+    <li> Email : {{emdata.email}}</li>
+    <li> Salary : {{emdata.salary}}</li>
+    <li> Company_id : {{emdata.company_id}}</li>
+    <li> Company : {{emdata.company}}</li>
+    <br><hr>
+
+{% endfor %}
+
+{#<a href="">Go to Show Page</a>#}
+</body>
+</html>

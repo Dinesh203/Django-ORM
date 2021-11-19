@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+  <title>ORM Show</title>
+</head>
+<body>
+{{ empdata }} <br>
+ {{ empdata.name }} <br>
+<h1>Show Company Data</h1> <hr>
+{% for data in empdata %}
+    <li> ID : {{data.id}}</li>
+    <li> Name : {{data.name}}</li>
+    <li> Email : {{data.email}}</li>
+    <li> Salary : {{data.salary}}</li><br> <hr>
+
+{% endfor %}
+
+    {% if objemp %}
+    {% for data in objemp %}
+    <a href={{ data.id }}>Data id </a> <br> <br>
+    <a href={{ data.name }}>Name </a> <br> <br>
+    <a href={{ data.email }}>Email</a><br> <br>
+    <a href={{ data.company_id }}>Company Id</a><br> <br>
+    <a href={{ data.salary }}>Salary</a>
+    {% endfor %} <br> <hr>
+    {% endif %}
+
+{#<a href="{% url 'Showdata' data.id %}">Go to Show Page</a>#}
+</body>
+</html>
+
+
+{#    <a href="showdata/{{ data.id }}">Data id </a> <br> <br>#}
+{#    <a href="showdata/{{ data.name }}">Name </a> <br> <br>#}
+{#    <a href={{ data.email }}>Email</a><br> <br>#}
+{#    <a href={{ data.company_id }}>Company Id</a><br> <br>#}
+{#    <a href={{ data.salary }}>Salary</a>#}
+{#    {{ data.company.description}}<br>#}
+{#    {{ data.company.address}}#}
